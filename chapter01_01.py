@@ -88,7 +88,10 @@ class Student():
         self._details = details
 
     def __str__(self):
-        return 'str : {}'.format(self._name)
+        return 'str : {} - {}'.format(self._name, self._number)
+
+    def __repr__(self):
+        return 'repr : {} - {}'.format(self._name, self._number)
 
 student1 = Student('Kim', 1, 1, {'gender': 'Male', 'score1': 95, 'score2': 92})
 student2 = Student('Lee', 2, 2, {'gender': 'Female', 'score1': 77, 'score2': 92})
@@ -98,5 +101,21 @@ print(student1.__dict__)
 print(student2.__dict__)
 print(student3.__dict__)
 
+# 리스트 선언
+students_list = []
 
+students_list.append(student1)
+students_list.append(student2)
+students_list.append(student3)
 
+print()
+
+print(students_list)
+
+print()
+print()
+
+# 반복(__str__)
+for x in students_list:
+    print(repr(x))
+    print(x)
