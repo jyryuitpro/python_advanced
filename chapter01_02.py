@@ -37,3 +37,55 @@ class Student():
 
     def __del__(self):
         Student.student_count -= 1
+
+# Self 의미
+student1 = Student('Cho', 2, 3, {'gender': 'Male', 'score1': 65, 'score2': 55})
+student2 = Student('Chang', 4, 1, {'gender': 'Female', 'score1': 85, 'score2': 74}, 'stu2@naver.com')
+
+print(id(student1))
+print(id(student2))
+
+# ID 확인
+a = 'ABC'
+b = a
+
+print(student1._name == student2._name)
+print(student1 is student2)
+print(a == b) # 값 비교
+print(a is b) # id 비교
+
+# dir & __dict__ 확인
+
+print(dir(student1))
+print(dir(student2))
+
+print()
+print()
+
+print(student1.__dict__)
+print(student2.__dict__)
+
+# Doctring
+print(Student.__doc__)
+print()
+
+# 실행
+student1.detail_info()
+student2.detail_info()
+
+# 에러
+Student.detail_info()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
