@@ -74,14 +74,52 @@ student1.detail_info()
 student2.detail_info()
 
 # 에러
-Student.detail_info()
+# Student.detail_info()
 
+Student.detail_info(student1)
+Student.detail_info(student2)
 
+# 비교
+print(student1.__class__, student2.__class__)
+print(id(student1.__class__) == id(student2.__class__))
 
+print()
 
+# 인스턴스 변수
+# 직접 접근(PEP 문법적으로 권장x)
 
+# student1._name = 'HAHAHA'
 
+print(student1._name, student2._name)
+print(student1._email, student2._email)
 
+print()
+print()
+
+# 클래스 변수
+
+# 접근
+print(student1.student_count)
+print(student2.student_count)
+print(Student.student_count)
+
+print()
+print()
+
+# 공유 확인
+print(Student.__dict__)
+print()
+print(student1.__dict__)
+print()
+print(student2.__dict__)
+
+# 인스턴스 네임스페이스 없으면 상위에서 검색
+# 즉, 동일한 이름으로 변수 생성 가능(인스턴스 검색 후 -> 상위(클래스 변수, 부모 클래스 변수))
+
+del student2
+
+print(student1.student_count)
+print(Student.student_count)
 
 
 
